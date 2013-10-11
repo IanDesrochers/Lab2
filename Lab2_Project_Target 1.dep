@@ -37,7 +37,7 @@ I (C:\Users\Joshua\Documents\GitHub\Lab2\STM32F4xx_StdPeriph_Driver\inc\stm32f4x
 I (C:\Users\Joshua\Documents\GitHub\Lab2\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_usart.h)(0x5255B987)
 I (C:\Users\Joshua\Documents\GitHub\Lab2\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_wwdg.h)(0x5255B987)
 I (C:\Users\Joshua\Documents\GitHub\Lab2\STM32F4xx_StdPeriph_Driver\inc\misc.h)(0x5255B987)
-F (.\src\main.c)(0x525700CF)(-c --cpu Cortex-M4.fp -D__EVAL -g -O0 --apcs=interwork -I.\src -I.\STM32F4xx_StdPeriph_Driver\inc --c99-I C:\Keil\ARM\RV31\INC-I C:\Keil\ARM\CMSIS\Include-I C:\Keil\ARM\Inc\ST\STM32F4xx-DHSE_VALUE="8000000" -DUSE_STDPERIPH_DRIVER -DSTM32F40XX-o .\obj\main.o --omf_browse .\obj\main.crf --depend .\obj\main.d)
+F (.\src\main.c)(0x52584872)(-c --cpu Cortex-M4.fp -D__EVAL -g -O0 --apcs=interwork -I.\src -I.\STM32F4xx_StdPeriph_Driver\inc --c99-I C:\Keil\ARM\RV31\INC-I C:\Keil\ARM\CMSIS\Include-I C:\Keil\ARM\Inc\ST\STM32F4xx-DHSE_VALUE="8000000" -DUSE_STDPERIPH_DRIVER -DSTM32F40XX-o .\obj\main.o --omf_browse .\obj\main.crf --depend .\obj\main.d)
 I (C:\Keil\ARM\ARMCC\include\stdio.h)(0x51C86004)
 I (C:\Users\Joshua\Documents\GitHub\Lab2\src\stm32f4xx.h)(0x5255B987)
 I (C:\Keil\ARM\CMSIS\Include\core_cm4.h)(0x51C85E0A)
