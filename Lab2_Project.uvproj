@@ -422,6 +422,21 @@
               <FileType>1</FileType>
               <FilePath>.\src\system_stm32f4xx.c</FilePath>
             </File>
+            <File>
+              <FileName>gpio_init.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\src\gpio_init.c</FilePath>
+            </File>
+            <File>
+              <FileName>lab2_filter.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\src\lab2_filter.c</FilePath>
+            </File>
+            <File>
+              <FileName>lab2_pwm.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\src\lab2_pwm.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
