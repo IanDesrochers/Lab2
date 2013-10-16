@@ -16,8 +16,13 @@
 /* Defines ------------------------------------------------------------------*/
 
 #define MAX_INTENSITY 100
-#define PULSE_SPEED 2000
-#define PWM_FREQUENCY 100000
+#define PULSE_SPEED 500
+#define PWM_FREQUENCY 1000
+#if (PWM_FREQUENCY * (PULSE_SPEED / 1000) / MAX_INTENSITY) % MAX_INTENSITY != 0
+	#define REAL_PWM_FREQUENCY PWM_FREQUENCY
+#else
+	#define REAL_PWM_FREQUENCY 100000
+#endif
 
 /* PWM Public Functions ---------------------------------------------------------*/
 

@@ -35,7 +35,7 @@ uint32_t pwm_count = 0, intensity = 0, up_down = 1, change_intensity_count = 0;
 void do_pwm() {
 	
 	//Set LED states
-	if (pwm_count == intensity) {
+	if (pwm_count >= intensity) {
 		GPIO_Write(GPIOD, 0x0); //Turn LEDs off if they have been on for specified intensity duration
 	} else if (pwm_count == 0) {
 		GPIO_Write(GPIOD, GPIO_Pin_12 | GPIO_Pin_13 | GPIO_Pin_14 | GPIO_Pin_15); //Turn LEDs on at the beginning of each new cycle
@@ -63,7 +63,7 @@ void do_pwm() {
 	}
 	
 	//Setting change-brighness flag
-	if (change_intensity_count == (PWM_FREQUENCY * (PULSE_SPEED / 1000) / MAX_INTENSITY)) {
+	if (change_intensity_count == (REAL_PWM_FREQUENCY * ((float)PULSE_SPEED / 1000) / MAX_INTENSITY)) {
 		change_intensity_count = 0; //Check if we've stayed at the curent brightness for long enough
 	} else {
 		change_intensity_count++; //Otherwise, increment counter and check next iteration

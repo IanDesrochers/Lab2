@@ -149,7 +149,7 @@ static void set_mode() {
 			SysTick_Config(SystemCoreClock / 20); //Configure systick timer for temperature mode
 		} else { //If we're in mode 0 (temperature)
 			mode = 1; //Go to mode 1 (PWM)
-			SysTick_Config(SystemCoreClock / PWM_FREQUENCY); //Configure systick timer for PWM mode
+			SysTick_Config(SystemCoreClock / REAL_PWM_FREQUENCY); //Configure systick timer for PWM mode
 			GPIO_Write(GPIOD, 0x0); //Turn off all LEDs
 		}
 		sleep(250); //Wait for a bit (debounce)
