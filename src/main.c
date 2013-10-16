@@ -4,6 +4,7 @@
 
 #define V25 .760f
 #define AVSLOPE .0025f
+#define VDD 3.0f
 
 
 uint32_t ticks = 0;
@@ -193,7 +194,7 @@ void calculate_average(struct Moving_Average *moving_average) {
 }
 
 float get_temperature(uint16_t raw_value) {
-	return((((3.3f*((float)raw_value)/4096 - V25)/AVSLOPE)+25));
+	return((((VDD*((float)raw_value)/4096 - V25)/AVSLOPE)+25));
 }
 
 void sleep(uint32_t n_sleep) {
