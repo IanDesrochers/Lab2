@@ -20,11 +20,20 @@
   * @{
   */ 
 
+#ifndef MOVING_AVERAGE_FILTER_SIZE
+#define MOVING_AVERAGE_FILTER_SIZE 16
+#endif
+
+#ifndef MOVING_AVERAGE_STRUCT
+#define MOVING_AVERAGE_STRUCT
+
 struct Moving_Average {
-	float moving_values[100];
+	float moving_values[MOVING_AVERAGE_FILTER_SIZE];
 	uint32_t index;
 	float average;
 };
+
+#endif
 
 /**
   * @}
@@ -36,6 +45,7 @@ struct Moving_Average {
   * @{
   */ 
 
+void init_moving_average(struct Moving_Average *moving_average, uint32_t);
 void insert_value(struct Moving_Average *moving_average, float new_value);
 void calculate_average(struct Moving_Average *moving_average);
 

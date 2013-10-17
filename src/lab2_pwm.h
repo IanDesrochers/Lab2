@@ -13,16 +13,31 @@
 
 #include "stm32f4xx.h"
 
-/* Defines ------------------------------------------------------------------*/
+/* Private Types ---------------------------------------------------------*/
 
-#define MAX_INTENSITY 100
-#define PULSE_SPEED 500
-#define PWM_FREQUENCY 1000
-#if (PWM_FREQUENCY * (PULSE_SPEED / 1000) / MAX_INTENSITY) % MAX_INTENSITY != 0
-	#define REAL_PWM_FREQUENCY PWM_FREQUENCY
-#else
-	#define REAL_PWM_FREQUENCY 100000
+/** @defgroup Structs
+  * @{
+  */ 
+
+#ifndef PWM_STRUCT
+#define PWM_STRUCT
+
+struct PWM {
+	uint32_t pwm_count;
+	uint32_t intensity;
+	uint32_t up_down;
+	uint32_t change_intensity_count;
+	uint32_t pulse_speed;
+	uint32_t pwm_frequency;
+	uint32_t max_intensity;
+	float real_intensity;
+};
+
 #endif
+
+/**
+  * @}
+  */
 
 /* PWM Public Functions ---------------------------------------------------------*/
 
@@ -30,7 +45,8 @@
   * @{
   */
 
-void do_pwm(void);
+void init_pwm(struct PWM *pwm, uint32_t pulse_speed, uint32_t pwm_frequency, uint32_t max_intensity);
+void pwm_isr(struct PWM *pwm);
 
 /**
   * @}

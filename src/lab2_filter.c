@@ -21,6 +21,21 @@
   */
 
 /**
+  * @brief  Initializes Moving Average Filter
+  * @param  *moving_average: Pointer to a Moving_Average struct
+	* @param  size: Length of moving average array
+  * @retval None
+  */
+void init_moving_average(struct Moving_Average *moving_average, uint32_t size) {
+	moving_average->index = 0;
+	moving_average->average = 0;
+	uint32_t i;
+	for (i=0; i<sizeof(moving_average->moving_values)/sizeof(moving_average->average); i++) {
+		moving_average->moving_values[i] = 0;
+	}
+}
+
+/**
   * @brief  Inserts a value into the Filter's array.
   * @param  *moving_average: Pointer to a Moving_Average struct
 	* @param  new_value: New value to insert into filter's buffer
